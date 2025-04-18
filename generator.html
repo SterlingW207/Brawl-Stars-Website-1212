@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Brawler Generator</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #fffde7, #fff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #222;
+            text-align: center;
+            padding: 40px;
+        }
+
+        nav {
+            background-color: #1e2a78;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd600;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .generator {
+            margin-top: 40px;
+        }
+
+        .generator img {
+            width: 250px;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 0 15px #888;
+        }
+
+        .quote {
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            background-color: #ffca28;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 0 10px #ffd54f;
+        }
+
+        button:hover {
+            background-color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <h1>Brawl Stars Fan Page</h1>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="angelo.html">Why Angelo Sucks</a>
+            <a href="buzz.html">Buzz #2</a>
+            <a href="Reume.html">Résumé</a>
+            <a href="generator.html">Brawler Generator</a>
+        </div>
+    </nav>
+
+    <h1>🎲 Random Brawler Generator 🎲</h1>
+    <div class="generator">
+        <button onclick="generateBrawler()">Generate Brawler</button>
+        <div id="brawler-display">
+            <img id="brawler-img" src="" alt="" style="display:none;">
+            <p class="quote" id="brawler-quote"></p>
+        </div>
+    </div>
+
+    <script>
+        const brawlers = [
+            { name: "Edgar", image: "Images/edgar 1.png", quote: "I’m not hiding. I’m waiting." },
+            { name: "Max", image: "Images/max.png", quote: "Gotta go fast!" },
+            { name: "Bo", image: "Images/BO.png", quote: "My aim is true!" },
+            { name: "Kenji", image: "Images/kenji.png", quote: "Blades before bullets!" },
+            { name: "Surge", image: "Images/surge.png", quote: "To protect and swerve!" },
+            { name: "Dynamike", image: "Images/dyna.png", quote: "Ka-BOOM!" },
+            { name: "Mandy", image: "Images/mandy.png", quote: "Sweet and deadly." },
+            { name: "Poco", image: "Images/poco.png", quote: "Let’s rock!" }
+        ];
+
+        function generateBrawler() {
+            const random = brawlers[Math.floor(Math.random() * brawlers.length)];
+            document.getElementById("brawler-img").src = random.image;
+            document.getElementById("brawler-img").style.display = "block";
+            document.getElementById("brawler-img").alt = random.name;
+            document.getElementById("brawler-quote").innerText = `"${random.quote}" - ${random.name}`;
+        }
+    </script>
+</body>
+</html>
